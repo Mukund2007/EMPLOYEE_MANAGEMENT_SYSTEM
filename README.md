@@ -24,8 +24,14 @@ A modern, responsive, and secure full-stack Employee Management System built wit
 
 ## 📸 Screenshots
 
-> *Place project UI screenshots here (e.g. employee list table, Recharts department analytics, leave request form, admin link requests approvals page).*
-> *Example: `![Dashboard](docs/images/dashboard.png)`*
+### 👥 Employee Directory
+![Employee Directory](docs/images/screenshot1.png)
+
+### 📊 Analytics Dashboard
+![Analytics](docs/images/screenshot2.png)
+
+### 📅 Leave Requests & Account Link Flow
+![Leave Requests](docs/images/screenshot3.png)
 
 ---
 
