@@ -1,6 +1,18 @@
 # Zip files
 *.zip
 
-# OS files
+# Environment files
+.env
+.env.local
+backend/.env
+
+# Java build output
+backend/target/
+
+# macOS & System
 .DS_Store
 Thumbs.db
+__MACOSX/
+
+# Test scripts
+test_api.sh
