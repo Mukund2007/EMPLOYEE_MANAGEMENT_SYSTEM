@@ -15,9 +15,11 @@ FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
 
-# Dynamic JVM memory optimization (automatically caps heap at 75% of container memory)
-ENV JAVA_OPTS="-XX:MaxRAMPercentage=75.0 -XX:+UseG1GC"
+# Force TLS 1.2 at JVM level (Aiven MySQL requires TLS 1.2+)
+# -Djdk.tls.client.protocols=TLSv1.2 forces the JVM to only use TLS 1.2
+ENV JAVA_OPTS="-XX:MaxRAMPercentage=75.0 -XX:+UseG1GC -Djdk.tls.client.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2"
 ENV PORT=8080
 EXPOSE 8080
 
 CMD ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]
+
