@@ -66,8 +66,18 @@ public class EmployeeServiceImpl implements EmployeeService {
         existingEmployee.setDepartment(employeeDto.getDepartment());
         existingEmployee.setSalary(employeeDto.getSalary());
         existingEmployee.setJoinDate(employeeDto.getJoinDate());
-        existingEmployee.setPosition(employeeDto.getPosition());
-        existingEmployee.setUsername(employeeDto.getUsername());
+
+        String position = employeeDto.getPosition();
+        if (position != null && position.trim().isEmpty()) {
+            position = null;
+        }
+        existingEmployee.setPosition(position);
+
+        String username = employeeDto.getUsername();
+        if (username != null && username.trim().isEmpty()) {
+            username = null;
+        }
+        existingEmployee.setUsername(username);
 
         Employee updatedEmployee = employeeRepository.save(existingEmployee);
         return mapToDto(updatedEmployee);
@@ -179,6 +189,14 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     private Employee mapToEntity(EmployeeDto dto) {
+        String username = dto.getUsername();
+        if (username != null && username.trim().isEmpty()) {
+            username = null;
+        }
+        String position = dto.getPosition();
+        if (position != null && position.trim().isEmpty()) {
+            position = null;
+        }
         return Employee.builder()
                 .id(dto.getId())
                 .name(dto.getName())
@@ -187,8 +205,8 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .department(dto.getDepartment())
                 .salary(dto.getSalary())
                 .joinDate(dto.getJoinDate())
-                .position(dto.getPosition())
-                .username(dto.getUsername())
+                .position(position)
+                .username(username)
                 .build();
     }
 }
