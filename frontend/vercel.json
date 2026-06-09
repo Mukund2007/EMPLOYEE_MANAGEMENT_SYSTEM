@@ -2,7 +2,8 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://employeemanagementsystem-backend.onrender.com/api/:path*"
+      "destination": "https://employeemanagementsystem-backend-ikjl.onrender.com/api/:path*"
     }
   ]
 }
+
