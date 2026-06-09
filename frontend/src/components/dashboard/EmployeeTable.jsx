@@ -145,14 +145,14 @@ export default function EmployeeTable({
           <input
             type="range"
             min="0"
-            max="300000"
-            step="5000"
+            max="1000000"
+            step="10000"
             value={salaryRange}
             onChange={(e) => setSalaryRange(Number(e.target.value))}
             style={{ flex: 1, minWidth: '200px', accentColor: 'var(--primary)', cursor: 'pointer' }}
           />
           <button
-            onClick={() => { setSalaryRange(300000); setSelectedDept(''); setSearchTerm(''); }}
+            onClick={() => { setSalaryRange(1000000); setSelectedDept(''); setSearchTerm(''); }}
             className="btn btn-secondary"
             style={{ padding: '8px 14px', fontSize: '0.8rem' }}
           >

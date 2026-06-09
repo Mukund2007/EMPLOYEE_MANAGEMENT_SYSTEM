@@ -138,7 +138,7 @@ export default function App() {
   // Filters
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDept, setSelectedDept] = useState('');
-  const [salaryRange, setSalaryRange] = useState(300000);
+  const [salaryRange, setSalaryRange] = useState(1000000);
   const [showFilters, setShowFilters] = useState(false);
 
   // Modal
